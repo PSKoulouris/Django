@@ -7,11 +7,25 @@
     <title>Document</title>
 </head>
 <body>
+    {% extends "master.html" %}
+
+    {% block title %}
+
+    My Club: list of all members
+
+    {% endblock%}
+
+    {% block content%}
+
+    <p><a href="/">HOME</a></p>
+
     <h1>Members: </h1>
     <ul>
-        {% for member in mymembers %}
-            <li><a href = "details/{{ member.id }}"> {{member.firstname}} {{member.lastname}}</a></li>
+        {% for i in mymembers %}
+            <li><a href = "details/{{ i.id }}"> {{i.firstname}} {{i.lastname}} </a></li>
         {% endfor %}
     </ul>
+
+    {% endblock %}
 </body>
 </html>
